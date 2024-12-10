@@ -1,3 +1,5 @@
+import pandas as pd
+
 calendar_events = [
     {
         "title": "Event 1",
@@ -120,6 +122,12 @@ calendar_events = [
     },
 ]
 
-
 # st.markdown("## API reference")
 # st.help(calendar)
+
+names = []
+position = []
+contact = []
+dict = {'Name' : names, "Position" : position, "Contact" : contact}
+
+df = pd.DataFrame(dict)
