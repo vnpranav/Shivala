@@ -123,6 +123,7 @@ def location():
       st.markdown("Opening hour: ")
       st.markdown("Closing hour: ")
       st.markdown("Contact : 627-xxxx")
+      st.markdown("Email : ")
       st.warning("Opening and closing times may vary during festivals")
 
    with col2: 
