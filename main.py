@@ -1,3 +1,4 @@
+import folium.map
 import streamlit as st 
 from streamlit_folium import st_folium
 import folium
@@ -139,7 +140,7 @@ def main():
       col1, col2 = st.columns(2)
 
       loc = folium.Map((-20.400956632353818, 57.59489778964128), zoom_start=30)
-      folium.Marker((-20.400956632353818, 57.59489778964128), popup="Shiv Shankar Mandir", tooltip="Shiv Shankar Mandir").add_to(loc)
+      folium.map.Marker((-20.400956632353818, 57.59489778964128)).add_to(loc)
 
       with col1:
          st.subheader("Marie Jeanie, Joomadhar Lane, Rose Belle")
