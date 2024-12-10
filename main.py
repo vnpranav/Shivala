@@ -10,8 +10,8 @@ import os
 
 st.set_page_config(page_title="Shiv Shankar Mandir", page_icon="🕉️", layout="wide")
 
-anchor_ids = ["About", "Events", "Location", "Contact"]
-anchor_icons = ["info-circle", "tag", "map", "envelope"]
+anchor_ids = ["About", "Events", "Location"]
+anchor_icons = ["info-circle", "tag", "map"]
 
 st.subheader("Narmadeshwar Shiv Shankar Mandir")
 scroll_navbar(
@@ -123,24 +123,26 @@ def location():
       st.markdown("Opening hour: ")
       st.markdown("Closing hour: ")
       st.markdown("Contact : 627-xxxx")
+      st.warning("Opening and closing times may vary during festivals")
 
    with col2: 
       folium_static(loc)
 
+def dummy():
+   st.write("content" * 50)
+
+sections = {
+   "About" : dummy,
+   "Events" : planner,
+   "Location" : location,
+}
 
 for anchor_id in anchor_ids:
    st.subheader(anchor_id,anchor=anchor_id)
-   if anchor_id == "Events":
-      planner()
-   else:
-      st.write("content" * 50)
+   sections[anchor_id]()
    st.divider()
 
-sections = {
-   "Events" : planner,
-   "Location" : location
-}
 
-location()
+
 
 
